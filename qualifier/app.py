@@ -112,7 +112,7 @@ def save_qualifying_loans(qualifying_loans):
     # @TODO: Complete the usability dialog for savings the CSV Files.
     #Exits the promps if the user does not qualify for any loans
     if not qualifying_loans:
-        sys.exit("Sorry not qualifying loans")
+        sys.exit("Sorry no qualifying loans")
     #if user does qualify for a loan(s) it asks user if they would like to save a copy of the loans
     savefile = questionary.confirm(
         "Would you like to save a copy of your qualified loan? "
@@ -125,8 +125,6 @@ def save_qualifying_loans(qualifying_loans):
     if savefile:
         name= questionary.text("Name your save file:").ask()
         file_path = Path(f'./qualifier/data/output/{name}.csv')
-
-        #file_path = Path(f'./qualifier/data/output/qualifying_loans.csv')
         with open(file_path, 'w', newline='') as f:
             writer = csv.writer(f)
             writer.writerow(header)
