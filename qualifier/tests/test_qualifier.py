@@ -12,6 +12,9 @@ from qualifier.filters import credit_score
 from qualifier.filters import debt_to_income
 from qualifier.filters import loan_to_value
 from qualifier.filters import max_loan_size
+from qualifier import app
+
+#Pyunit testing
 
 def test_save_csv():
     # @TODO: Your code here!
